@@ -1,14 +1,5 @@
-/* Functions*/
+/* Flow controls*/
 
-/* 🟡 Pattern
-    function add(params) {
-        return a+b
-    }
-*/
-
-function add(a, b) {
-  return a + b;
+for (let i = 0; i < 5; i++) {
+  console.log(i);
 }
-
-let result = add(5, 5);
-console.log("result", result);
