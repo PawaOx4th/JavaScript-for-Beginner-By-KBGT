@@ -1,4 +1,5 @@
 /* DOM Manipulation*/
+/* Event*/
 
 /* 
 
@@ -17,11 +18,26 @@ function appendImageElem(keyword, index) {
   galleryElem.appendChild(imgElem);
 }
 
-function run() {
-  for (let i = 0; i <= 9; i++) {
-      appendImageElem("cat", i);
-      
+function removePhotos() {
+  const galleryElem = document.querySelector(".gallery");
+  galleryElem.innerHTML = "";
+}
+
+function searchPhotos(event) {
+  const keyword = event.target.value;
+
+  if (event.key === "Enter" && keyword) {
+    removePhotos();
+
+    for (let i = 1; i <= 9; i++) {
+      appendImageElem(keyword, i);
+    }
   }
+}
+
+function run() {
+  const inputElem = document.querySelector("input");
+  inputElem.addEventListener("keydown", searchPhotos);
 }
 
 run();
